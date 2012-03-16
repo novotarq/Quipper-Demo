@@ -18,7 +18,11 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'twitter-bootstrap-rails'
 end
+
+#forced, 2.1.8 throws an error while generating twitter bootstrap
+gem 'less-rails', '2.1.7'
 
 gem 'jquery-rails'
 
