@@ -27,7 +27,7 @@ gem 'less-rails', '2.1.7'
 gem 'jquery-rails'
 gem 'simple_form'
 
-group :test do
+group :test, :development do
   gem 'mongoid-rspec'
   gem "database_cleaner"
   gem "rspec-rails", "~> 2.6"
