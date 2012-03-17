@@ -1,8 +1,8 @@
 class Task
   include Mongoid::Document
-  field :title, :type => String
-  field :deadline, :type => Date
-  field :completed, :type => Boolean, :default => false
+  field :title, type: String
+  field :deadline, type: Date
+  field :completed, type: Boolean, default: false
 
   attr_accessible :title, :deadline, :completed
 
@@ -12,6 +12,5 @@ class Task
   scope :completed, where(completed: true)
   scope :pending, where(completed: false)
   scope :overdue, where(:deadline.lt => Date.today).pending
-  scope :todo, where(:deadline.gt => Date.today).pending
-
+  scope :todo, any_of({ :deadline.gt => Date.today }, { deadline: nil }).pending
 end

@@ -39,9 +39,14 @@ describe Task do
     end
 
     describe "#todo" do
+      before do
+        @no_date_task = FactoryGirl.create(:no_date_task)
+      end
+      
       subject { Task.todo }
 
       it { should include(@todo_task) }
+      it { should include(@no_date_task) }
       it { should_not include(@completed_task) }
       it { should_not include(@overdue_task) }
     end

@@ -1,4 +1,4 @@
-<%= form_for(@task) do |f| %>
+<%= simple_form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -12,15 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.input :title %>
   </div>
   <div class="field">
-    <%= f.label :deadline %><br />
-    <%= f.date_select :deadline %>
+    <%= f.input :deadline %>
   </div>
   <div class="field">
-    <%= f.label :completed %><br />
     <%= f.check_box :completed %>
   </div>
   <div class="actions">

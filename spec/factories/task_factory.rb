@@ -14,6 +14,10 @@ FactoryGirl.define do
   factory :todo_task, :class => Task do
     title 'todo'
     deadline Date.today + 1
+  end
+
+  factory :no_date_task, :class => Task do
+    title 'no_date_task'
   end    
 
 end

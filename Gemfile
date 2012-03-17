@@ -25,6 +25,7 @@ end
 gem 'less-rails', '2.1.7'
 
 gem 'jquery-rails'
+gem 'simple_form'
 
 group :test do
   gem 'mongoid-rspec'

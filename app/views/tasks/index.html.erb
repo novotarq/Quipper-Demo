@@ -1,27 +1,22 @@
-<h1>Listing tasks</h1>
+<% unless @overdue.empty? %>
+  <div id="overdue">
+    <h2>Overdue</h2>
+    <%= render :partial => "task_list", :locals => { :tasks => @overdue } %>
+  </div>
+<% end %> 
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Deadline</th>
-    <th>Completed</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.title %></td>
-    <td><%= task.deadline %></td>
-    <td><%= task.completed %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<% unless @todo.empty? %>
+  <div id="todo">
+    <h2>Todo</h2>
+    <%= render :partial => "task_list", :locals => { :tasks => @todo } %>
+  </div>
 <% end %>
-</table>
 
-<br />
+<% unless @completed.empty? %>
+  <div id="completed">
+    <h2>Completed</h2>
+    <%= render :partial => "task_list", :locals => { :tasks => @completed } %>
+  </div>
+<% end %>
 
-<%= link_to 'New Task', new_task_path %>
+<%= link_to 'New', new_task_path, class: 'btn btn-primary' %>
