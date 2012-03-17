@@ -41,6 +41,7 @@ GEM
       execjs
     coffee-script-source (1.2.0)
     commonjs (0.2.4)
+    database_cleaner (0.7.1)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.3.0)
@@ -75,6 +76,9 @@ GEM
       activemodel (~> 3.1)
       mongo (~> 1.3)
       tzinfo (~> 0.3.22)
+    mongoid-rspec (1.4.4)
+      mongoid (~> 2.0)
+      rspec (~> 2)
     multi_json (1.1.0)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -146,10 +150,12 @@ PLATFORMS
 DEPENDENCIES
   bson_ext (~> 1.5)
   coffee-rails (~> 3.2.1)
+  database_cleaner
   factory_girl_rails (~> 1.2)
   jquery-rails
   less-rails (= 2.1.7)
   mongoid (~> 2.4)
+  mongoid-rspec
   rails (= 3.2.2)
   rspec-rails (~> 2.6)
   sass-rails (~> 3.2.3)
