@@ -1,4 +1,4 @@
-<table>
+<table class="table">
   <tr>
     <th>Title</th>
     <th>Deadline</th>
@@ -17,8 +17,8 @@
         <%= f.check_box :completed %>
       <% end %>
     </td>
-    <td><%= link_to 'Edit', edit_task_path(task), id: "edit_#{task.title}" %></td>
-    <td><%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Edit', edit_task_path(task), id: "edit_#{task.title}", class: 'btn' %></td>
+    <td><%= link_to 'Destroy', task, confirm: 'Are you sure?', method: :delete, class: 'btn' %></td>
   </tr>
 <% end %>
 </table>
